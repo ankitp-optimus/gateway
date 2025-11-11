@@ -6,15 +6,24 @@ spring:
       enabled: false
     gateway:
       routes:
+        # Simple health check route for testing
+        - id: health-route
+          uri: no://op
+          predicates:
+            - Path=/health
+          filters:
+            - SetStatus=200
+            - name: SetResponseHeader
+              args:
+                name: Content-Type
+                value: application/json
+          order: 0
+
+        # Optimus service route
         - id: optimus-route
           uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
           predicates:
             - Path=/api/**
           filters:
             - AddResponseHeader=X-Gateway-Route,optimus
-        - id: health-route
-          uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
-          predicates:
-            - Path=/health
-          filters:
-            - SetPath=/actuator/health
+          order: 1
