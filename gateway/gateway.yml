@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    gateway:
+      routes:
+        - id: optimus-route
+          uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
+          predicates:
+            - Path=/api/**
+          filters:
+            - AddResponseHeader=X-Gateway-Route,optimus
+        - id: health-route
+          uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
+          predicates:
+            - Path=/health
+          filters:
+            - SetPath=/actuator/health
