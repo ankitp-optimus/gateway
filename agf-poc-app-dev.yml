@@ -1,0 +1,16 @@
+# Development environment specific configuration
+agf:
+  config:
+    messages:
+      greeting: "🔧 DEV: Hello from Optimus to AGF - GitHub Config (DEV Environment) 🔧"
+      home: "🔧 DEV: App running - Config Server Development Mode 🔧"
+      health: "🔧 DEV: Application healthy - GitHub Config (Development) 🔧"
+    features:
+      enableAdvancedLogging: true
+      enableMetrics: true
+    environment:
+      name: "development"
+      description: "Development environment - GitHub configuration"
+    company:
+      name: "Optimus Information Inc"
+      department: "AGF Team - Development (GitHub Config)"
