@@ -37,7 +37,7 @@ spring:
       routes:
         # AGF2 Sample WebApp DIT Special Route - Public access
         - id: agf2-sample-webapp-dit-special-route
-          uri: https://agf2samplewebapp-aca-dit.proudpond-476ffb33.canadaeast.azurecontainerapps.io
+          uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
           predicates:
             - Host=webdev.agf.com
             - Path=/testdit/pub/**
@@ -77,7 +77,7 @@ spring:
 
         # AGF2 Sample WebApp DIT Main Route
         - id: agf2-sample-webapp-dit-main-route
-          uri: https://agf2samplewebapp-aca-dit.proudpond-476ffb33.canadaeast.azurecontainerapps.io
+          uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
           predicates:
             - Host=webdev.agf.com
             - Path=/testdit/**
@@ -92,7 +92,7 @@ spring:
 
         #  Test Route without Host predicate (for direct testing)
         - id: agf2-sample-webapp-dit-test-route
-          uri: https://agf2samplewebapp-aca-dit.proudpond-476ffb33.canadaeast.azurecontainerapps.io
+          uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
           predicates:
             - Path=/testdit/**
           filters:
@@ -177,7 +177,7 @@ logging:
 # Azure Container Apps specific configuration
 azure:
   containerapp:
-    environment: "canadaeast"
+    environment: "canadacentral"
     agf2-sample-webapp:
-      url: "https://agf2samplewebapp-aca-dit.proudpond-476ffb33.canadaeast.azurecontainerapps.io"
+      url: "https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io"
       host: "webdev.agf.com"
