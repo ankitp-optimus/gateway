@@ -90,6 +90,20 @@ spring:
                 fallbackUri: forward:/gwerrors/agf/error.html
           order: 9000
 
+        # TypeScript POC Portfolio Route
+        - id: typescript-poc-portfolio-route
+          uri: https://ca-typescript-poc-01.bluedesert-0d665001.canadacentral.azurecontainerapps.io
+          predicates:
+            - Path=/portfolio/**
+          filters:
+            - StripPrefix=1
+            - SecureHeaders
+            - name: AddResponseHeader
+              args:
+                name: X-Gateway-Route
+                value: typescript-poc-portfolio
+          order: 5000
+
         #  Test Route without Host predicate (for direct testing)
         - id: agf2-sample-webapp-dit-test-route
           uri: https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io
@@ -181,3 +195,6 @@ azure:
     agf2-sample-webapp:
       url: "https://ca-java-agf.bluedesert-0d665001.canadacentral.azurecontainerapps.io"
       host: "webdev.agf.com"
+    typescript-poc:
+      url: "https://ca-typescript-poc-01.bluedesert-0d665001.canadacentral.azurecontainerapps.io"
+      path: "/portfolio"
