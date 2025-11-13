@@ -1,0 +1,21 @@
+# Production environment specific configuration
+agf:
+  config:
+    messages:
+      greeting: "🏭 PROD: Hello from Optimus to AGF - GitHub Config (PRODUCTION) 🏭"
+      home: "🏭 PROD: App running - Config Server Production Mode 🏭"
+      health: "🏭 PROD: Application healthy - GitHub Config (Production) 🏭"
+    features:
+      enableAdvancedLogging: false
+      enableMetrics: true
+    environment:
+      name: "production"
+      description: "Production environment - GitHub configuration"
+    company:
+      name: "Optimus Information Inc"
+      department: "AGF Team - Production (GitHub Config)"
+
+logging:
+  level:
+    com.optimus.agf: WARN
+    root: WARN

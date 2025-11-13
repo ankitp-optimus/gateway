@@ -1,0 +1,47 @@
+# Default configuration for AGF POC Application
+# This file will be stored in GitHub and read by Azure Config Server
+
+spring:
+  application:
+    name: agf-poc-app
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,refresh,env
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.optimus.agf: INFO
+    root: INFO
+
+info:
+  app:
+    name: AGF POC Application - CONFIG SERVER VERSION
+    description: Spring Boot POC application for AGF project - Fetched from GitHub
+    version: 1.0.0-CONFIG-SERVER
+    company: Optimus Information Inc
+
+# Custom configurable properties for POC - CONFIG SERVER VALUES
+agf:
+  config:
+    messages:
+      greeting: "🚀 Hello from Optimus to AGF - FETCHED FROM GITHUB CONFIG SERVER! 🚀"
+      home: "🌟 App is running - POWERED BY CONFIG SERVER! 🌟"
+      health: "✅ AGF POC Application is running! - Configuration from GitHub Repository ✅"
+    features:
+      enableAdvancedLogging: true
+      enableMetrics: true
+    environment:
+      name: "config-server"
+      description: "Configuration fetched from GitHub via Azure Config Server"
+    company:
+      name: "Optimus Information Inc"
+      department: "AGF Team - Config Server Enabled"

@@ -1,0 +1,24 @@
+# Copy these files to GitHub repository
+
+# Step 1: Create GitHub Repository
+# 1. Go to GitHub.com
+# 2. Create new repository: "agf-config-repo"
+# 3. Make it public or private (both work with Azure Config Server)
+
+# Step 2: Upload these files to the repository root:
+# - agf-poc-app.yml
+# - agf-poc-app-dev.yml  
+# - agf-poc-app-prod.yml
+# - GITHUB-SETUP.md
+
+# Step 3: Note your repository URL
+# Format: https://github.com/[your-username]/agf-config-repo
+
+# Step 4: Configure Azure Config Server
+# Portal → Container App Environment → Services → Add Config Server
+# Repository URI: https://github.com/[your-username]/agf-config-repo
+# Branch: main
+# Folder: / (root)
+
+# Your GitHub repository URL will be:
+# https://github.com/[YOUR-USERNAME]/agf-config-repo
